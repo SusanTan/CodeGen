@@ -709,7 +709,7 @@ class DatasetMode(Generic[T]):
                                     create_symlink(
                                         f"../{lang}.{split}.{suffix}.{i}{self.bpe.ext}.pth",
                                         XLM_folder.joinpath(
-                                            f"{split}.{lang}_{suffix1}-{lang}_{suffix2}.{lang}_{suffix}.{i}.pth"
+                                            f"{split}.{lang}_{suffix1}-{lang}_{suffix2}.{lang}_{suffix}.pth"
                                         ),
                                     )
                             else:
@@ -741,6 +741,6 @@ class DatasetMode(Generic[T]):
                         else:
                             create_symlink(
                                 self.folder.joinpath(f"{lang}.{split}.{suffix}{self.bpe.ext}.pth"),
-                                XLM_folder.joinpath(f"{split}.{lang}_{suffix}.pth"),
+                                XLM_folder.joinpath(f"{split}.{lang}_{suffix}.{i}.pth"),
                             )
         logger.info("Check and symlink done.")
