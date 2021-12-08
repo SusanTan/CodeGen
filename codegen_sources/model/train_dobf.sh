@@ -1,7 +1,7 @@
 #!/bin/bash
 python train.py --exp_name deobfuscation \
   --dump_path '/home/zujunt/xcellent-ml/newly_trained_models' \
-  --data_path '/home/zujunt/xcellent-ml/dataset_python/' \
+  --data_path '/home/zujunt/xcellent-ml/CodeGen/fake_data/XLM-syml' \
   --split_data_accross_gpu local \
   --do_steps 'python_obfuscated-python_dictionary' \
   --obf_proba '0.5' \
