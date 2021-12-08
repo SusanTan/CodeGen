@@ -733,14 +733,14 @@ class DatasetMode(Generic[T]):
                         if split == "train":
                             for i in range(self.nb_train_split):
                                 create_symlink(
-                                    f"../{lang}.{split}.{suffix}.{i}{self.bpe.ext}.pth",
+                                    self.folder.joinpath(f"{lang}.{split}.{suffix}.{i}{self.bpe.ext}.pth"),
                                     XLM_folder.joinpath(
                                         f"{split}.{lang}_{suffix}.{i}.pth"
                                     ),
                                 )
                         else:
                             create_symlink(
-                                f"../{lang}.{split}.{suffix}{self.bpe.ext}.pth",
+                                self.folder.joinpath(f"{lang}.{split}.{suffix}{self.bpe.ext}.pth"),
                                 XLM_folder.joinpath(f"{split}.{lang}_{suffix}.pth"),
                             )
         logger.info("Check and symlink done.")
